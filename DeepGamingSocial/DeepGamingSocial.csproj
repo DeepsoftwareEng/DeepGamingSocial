@@ -1,0 +1,72 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>logodonbe.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="846480.png" />
+    <None Remove="873330.jpg" />
+    <None Remove="apex.png" />
+    <None Remove="avt.png" />
+    <None Remove="csgo.png" />
+    <None Remove="Custom-Icon-Design-Mono-Business-2-News.png" />
+    <None Remove="dota2.png" />
+    <None Remove="handshake.png" />
+    <None Remove="img\846480.png" />
+    <None Remove="img\873330.jpg" />
+    <None Remove="img\apex.png" />
+    <None Remove="img\csgo.png" />
+    <None Remove="img\dota2.png" />
+    <None Remove="img\lol.jpg" />
+    <None Remove="img\pubg.png" />
+    <None Remove="img\valorant.png" />
+    <None Remove="img\waitingscreen.jpg" />
+    <None Remove="logodonbe.png" />
+    <None Remove="lol.jpg" />
+    <None Remove="pubg.png" />
+    <None Remove="setting.png" />
+    <None Remove="valorant.png" />
+    <None Remove="waitingscreen.jpg" />
+    <None Remove="youtube-black-logo-11549680987z3oylzt1lb.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="logodonbe.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="img\846480.png" />
+    <Resource Include="img\873330.jpg" />
+    <Resource Include="img\Custom-Icon-Design-Mono-Business-2-News.png" />
+    <Resource Include="img\apex.png" />
+    <Resource Include="img\avt.png" />
+    <Resource Include="img\csgo.png" />
+    <Resource Include="img\dota2.png" />
+    <Resource Include="img\handshake.png" />
+    <Resource Include="img\logodonbe.png" />
+    <Resource Include="img\lol.jpg" />
+    <Resource Include="img\pubg.png" />
+    <Resource Include="img\setting.png" />
+    <Resource Include="img\valorant.png" />
+    <Resource Include="img\waitingscreen.jpg" />
+    <Resource Include="img\youtube-black-logo-11549680987z3oylzt1lb.png" />
+    <Resource Include="logodonbe.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ChatHistory\" />
+    <Folder Include="vid\" />
+  </ItemGroup>
+
+</Project>

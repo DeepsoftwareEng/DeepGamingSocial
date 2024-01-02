@@ -1,0 +1,63 @@
+﻿<Page x:Class="DeepGamingSocial.profileui"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:DeepGamingSocial"
+      Height="900" Width="1230" 
+      Title="profileui" Background="LightGray">
+    <Grid>
+        <Frame x:Name="yourstt" 
+                    Height="700" 
+                    Margin="0,200,0,0"
+                    Background="White"/>
+        <Button Content="Blog"
+                Width="615"
+                Height="50" Margin="0,150,615,700"
+                FontSize="25"
+                Click="Blog_Click"
+                FontWeight="Bold"
+                Background="#36393e"
+                Foreground="#E1E1E1" BorderBrush="#FF36393E"/>
+        <Button Content="Video-Highlight"
+                Width="615"
+                Height="50" Margin="615,150,0,700"
+                FontSize="25"
+                FontWeight="Bold"
+                Click="Vid_Click" Background="#FF444444"
+                Foreground="White" BorderBrush="#FF444444"
+                />
+        <TextBlock x:Name="nickname"
+                   Text="Nickname: "
+                   FontSize="20"
+                   Height="30"
+                   Width="300" Margin="187,23,743,847"/>
+        <Ellipse Height="100"
+                 Width="100" Margin="53,10,1077,790">
+            <Shape.Fill>
+                <ImageBrush x:Name="sttava"/>
+            </Shape.Fill>
+        </Ellipse>
+        <TextBlock x:Name="ingame"
+                   Text="Ingame: "
+                   FontSize="20"
+                   Height="30"
+                   Width="300" Margin="187,73,743,797"/>
+        <Line X1="0" Y1="0"
+              X2="0" Y2="70"
+              Stroke="Black"
+              StrokeThickness="4"
+              Height="70"
+              Width="4" Margin="615,25,611,805"/>
+        <TextBlock FontSize="20"
+                   x:Name="ttblog"
+                   Height="30"
+                   Width="300"
+                   Text="Total blog: " Margin="739,23,191,847"/>
+        <TextBlock FontSize="20"
+                   x:Name="ttvid"
+                   Height="30"
+                   Width="300"
+                   Text="Total video: " Margin="739,73,191,797"/> 
+    </Grid>
+</Page>

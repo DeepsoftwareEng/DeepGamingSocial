@@ -1,0 +1,23 @@
+﻿<Page x:Class="DeepGamingSocial.videoui"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:DeepGamingSocial"
+      Height="900" Width="1230" Title="videoui" Background="#858585">
+    <Grid>
+        <TextBlock Text="Video" FontSize="50" FontWeight="Bold" Height="70" Width="150" Margin="10,10,1070,820"/>
+        <Line X1="0" Y1="0" X2="200" Y2="0" Stroke="Black" StrokeThickness="10" Width="200" Height="4"
+          Margin="0,97,1030,799"/>
+        <ScrollViewer Height="700" Width="1230" Margin="0,200,0,0"  >
+            <StackPanel x:Name="VideoFeed" Background="LightGray" Height="900" Width="1230"/>
+        </ScrollViewer>
+        <Button Click="Button_Click" Content="Share your video" Height="60" Width="240" FontSize="25"
+            FontWeight="Bold" Margin="951,27,39,813" Background="Green"/>
+        <TextBox x:Name="Rename" Height="50" Width="500" Margin="215,27,515,823"/>
+        <Button Click="choose_Click" x:Name="choose" Height="60" Width="150" Content="Choose file" FontSize="24"
+            FontWeight="Bold" Margin="756,27,324,813" />
+        <Frame x:Name="chatbox" Height="300" Width="200" Margin="1030,600,0,0" />
+
+    </Grid>
+</Page>

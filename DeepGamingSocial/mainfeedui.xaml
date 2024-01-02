@@ -1,0 +1,350 @@
+﻿<Page x:Class="DeepGamingSocial.mainfeedui"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:DeepGamingSocial"
+      Height="900" Width="1600" Title="mainfeedui" Background="#858585">
+    <Page.Resources>
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="10">
+                            <ScrollViewer x:Name="PART_ContentHost" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="20">
+                            <ContentPresenter Margin="2"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          RecognizesAccessKey="True" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="DarkGray" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+    <Grid>
+
+        <Rectangle 
+            Width="1230" 
+            Fill="Black" 
+            Margin="100,0,270,840" 
+            />
+        <Rectangle 
+            Width="270" 
+            Height="250" 
+            Fill="#333333" 
+            Margin="1330,0,0,650" 
+            />
+        <Rectangle 
+            Width="270" 
+            Height="650" 
+            Fill="White" 
+            Margin="1330,250,0,0" 
+            />
+        <Line X1="0" Y1="0" X2="600" Y2="0" Stroke="Black" StrokeThickness="10" Width="600" Height="4"
+          Margin="437,156,563,740"/>
+        <TextBlock Text="Game News:" FontSize="30" FontWeight="Bold" Margin="217,10,1211,857" Foreground="White"/>
+        <TextBlock x:Name="News" Height="30" Margin="412,18,296,852" FontSize="30"/>
+        <Ellipse Margin="277,70,1268,776">
+            <Shape.Fill>
+                <ImageBrush x:Name="sttava"/>
+            </Shape.Fill>
+        </Ellipse>
+        <TextBox GotFocus="Status_GotFocus" x:Name="Status" Width="700" Margin="337,80,563,785"
+             Text="Your status..." FontSize="15" Foreground="DarkGray" Background="WhiteSmoke" Padding="1 4 0 0"/>
+        <Button Click="post_Click" x:Name="post" Content="Post" FontSize="25"
+            FontWeight="Bold" Background="Green" Margin="1069,75,443,779" Foreground="White">
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                                From="Green" To="White" Duration="0:0:0.2"/>
+                            <ColorAnimation Storyboard.TargetProperty="(Button.Foreground).(SolidColorBrush.Color)"
+                                                From="White" To="Green" Duration="0:0:0.2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                                From="White" To="Green" Duration="0:0:0.2"/>
+                            <ColorAnimation Storyboard.TargetProperty="(Button.Foreground).(SolidColorBrush.Color)"
+                                                From="Green" To="White" Duration="0:0:0.2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <ScrollViewer Width="1200" Margin="125,166,275,10">
+            <Grid>
+                <StackPanel x:Name="newfeed" Width="1200" Background="#676769" Margin="0,0,-17,-156"/>
+                <Frame x:Name="Comment" Height="300" Width="1182" Margin="-9,424,10,0"   />
+            </Grid>
+        </ScrollViewer>
+        <TextBlock Text="Friends" FontSize="25" FontWeight="Bold" Height="30" Width="100" Margin="1340,257,160,613"/>
+        <StackPanel x:Name="Friend" Height="570" Width="240" Margin="1348,295,12,35"/>
+
+        <Frame x:Name="chatbox" Height="300" Width="200" Margin="1125,590,275,10"/>
+        <Frame x:Name="ChangePage" Height="900" Width="1230" Margin="100,0,270,0"/>
+
+       
+
+        <Rectangle 
+            Height="900" 
+            Fill="#1A97DB" 
+            Canvas.Left="10" 
+            Canvas.Top="25" 
+            Margin="0,0,1510,0" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0.988"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="0.733"/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Triggers>
+                <EventTrigger RoutedEvent="MouseLeftButtonDown">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetName="Extend" Storyboard.TargetProperty="Margin" BeginTime="0:0:0">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="-2,-10,1600,10" />
+                                <SplineThicknessKeyFrame KeyTime="00:00:001" Value="0,0,1242,0" />
+                            </ThicknessAnimationUsingKeyFrames>
+                            <DoubleAnimation Storyboard.TargetName="Extend" Storyboard.TargetProperty="Opacity"
+                                             From="0" To="1"
+                                             Duration="0:0:1">
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Rectangle.Triggers>
+        </Rectangle>
+        <Canvas
+            x:Name="Extend" Margin="0,0,1242,0"
+            Background="#1A97DB"
+            Opacity="0" RenderTransformOrigin="0.5,0.5">
+            <Canvas.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Canvas.RenderTransform>
+            <TextBlock Text="ProFile" 
+                       FontSize="30" 
+                       Canvas.Left="119" 
+                       Canvas.Top="40"
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Top"
+                       FontWeight="Bold"
+                       Foreground="White"
+                       />
+            <TextBlock Text="NewsFeed" 
+                       FontSize="40" 
+                       Canvas.Left="119" 
+                       Canvas.Top="175"
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Top"
+                       FontWeight="Bold"
+                       Foreground="White"
+                       />
+            <TextBlock Text="Guide" 
+                       FontSize="40" 
+                       Canvas.Left="119" 
+                       Canvas.Top="275"
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Top"
+                       FontWeight="Bold"
+                       Foreground="White" Height="59" Width="161"
+                       />
+            <TextBlock Text="High-Light" 
+                       FontSize="40" 
+                       Canvas.Left="119" 
+                       Canvas.Top="362"
+                       HorizontalAlignment="Left" 
+                       VerticalAlignment="Center"
+                       FontWeight="Bold"
+                       Foreground="White"
+                       />
+            <TextBlock Text="Setting" 
+                       FontSize="40" 
+                       Canvas.Left="119" 
+                       Canvas.Top="450"
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Top"
+                       FontWeight="Bold"
+                       Foreground="White"
+                       />
+            <Canvas.Triggers>
+                <EventTrigger RoutedEvent="MouseLeftButtonDown">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetName="Extend" Storyboard.TargetProperty="Margin" BeginTime="0:0:0">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="0,0,1242,0" />
+                                <SplineThicknessKeyFrame KeyTime="00:00:01" Value="-2,-10,1600,10" />
+                            </ThicknessAnimationUsingKeyFrames>
+                            <DoubleAnimation Storyboard.TargetName="Extend" Storyboard.TargetProperty="Opacity"
+                                             From="1" To="0"
+                                             Duration="0:0:1">
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Canvas.Triggers>
+        </Canvas>
+        <Rectangle 
+                   Fill="#1A97DB" Margin="5,30,1515,790" />
+        <Ellipse Height="80" Width="80" MouseLeftButtonUp="Profile_Click" Margin="5,30,1515,790">
+            <Shape.Fill>
+                <ImageBrush x:Name="mainava"/>
+            </Shape.Fill>
+        </Ellipse>
+        <Button Click="Newfeed_Click" 
+                x:Name="Newfeed" Height="80" 
+                Width="80" Background="#1A97DB"
+            Margin="5,170,1515,650" BorderThickness="0">
+            <Image Source="img/Custom-Icon-Design-Mono-Business-2-News.png"/>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+
+                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                                From="#1A97DB" To="DarkGray" Duration="0:0:0.2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+
+                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                                From="DarkGray" To="#1A97DB" Duration="0:0:0.2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <Button Click="guide_Click" x:Name="guide" Height="80" Width="80" Background="#1A97DB"
+            Margin="5,262,1515,558" BorderThickness="0">
+            <Image Source="/img/handshake.png"/>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+
+                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                                From="#1A97DB" To="DarkGray" Duration="0:0:0.2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+
+                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                                From="DarkGray" To="#1A97DB" Duration="0:0:0.2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <Button Click="Vid_Click" x:Name="Vid" Height="80" Width="80" Background="#1A97DB"
+            Margin="5,354,1515,466" BorderThickness="0">
+            <Image Source="/img/youtube-black-logo-11549680987z3oylzt1lb.png" Height="70" Width="70"/>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+
+                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                                From="#1A97DB" To="DarkGray" Duration="0:0:0.2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+
+                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                                From="DarkGray" To="#1A97DB" Duration="0:0:0.2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <Button Click="Setting_Click" x:Name="Setting" Height="80" Width="80" Background="#1A97DB"
+            Margin="5,448,1515,372" BorderThickness="0">
+            <Image Source="/img/setting.png" Height="70" Width="71"/>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                                From="#1A97DB" To="DarkGray" Duration="0:0:0.2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                                From="DarkGray" To="#1A97DB" Duration="0:0:0.2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <Button Click="Quit_Click" x:Name="Quit" Width="80" Margin="5,793,1515,65" Background="Red"
+            Foreground="White" Content="X" FontSize="25" Padding="0 -5 0 5" FontWeight="Bold">
+            <Button.Triggers>
+                <EventTrigger RoutedEvent ="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                                From="Red" To="Green" Duration="0:0:0.2"/>
+                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                                From="White" To="Red" Duration="0:0:0.2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                                From="Green" To="Red" Duration="0:0:0.2"/>
+                            <ColorAnimation Storyboard.TargetProperty="(Button.Foreground).(SolidColorBrush.Color)"
+                                                From="Red" To="White" Duration="0:0:0.2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+
+    </Grid>
+</Page> 

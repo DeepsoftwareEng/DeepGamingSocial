@@ -1,0 +1,290 @@
+﻿<Page x:Class="DeepGamingSocial.guidefriendui"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:DeepGamingSocial"
+      Height="900" Width="1230" Title="guidefriendui" Background="LightGray">
+    <Grid>
+        <TextBlock Text="Choose game: " FontSize="40" FontWeight="Bold" Height="50" Width="300"
+               Margin="5,0,925,850"/>
+        <Button x:Name="findcsgo"  Height="410" Width="290" Margin="5,58,918,432">
+            <Image Source="img/csgo.png" Height="410" Width="290"/>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetName="CS" Storyboard.TargetProperty="Margin" BeginTime="0:0:0">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="19,468,930,432" />
+                                <SplineThicknessKeyFrame KeyTime="00:00:0.5" Value="19,318,930,432"/>
+                            </ThicknessAnimationUsingKeyFrames>
+                            <DoubleAnimation Storyboard.TargetName="CS"
+                                             Storyboard.TargetProperty="Opacity"
+                                             From="0"  To="100"
+                                             Duration="0:0:2">
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="CS"
+                                             Storyboard.TargetProperty="Opacity"
+                                             From="100"  To="0"
+                                             Duration="0:0:0.2">
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <TextBlock x:Name="CS" Text="Csgo"
+                   FontSize="30"
+                   FontWeight="Bold"
+                   Height="150"
+                   Foreground="Aqua" 
+                   Visibility="Visible"
+                   Opacity="0" Margin="19,318,930,432" >
+            <TextBlock.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.7">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="DarkGray" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Background>
+        </TextBlock>
+        <Button Click="Finding_Click" x:Name="Valorant" Height="410" Width="290" Margin="318,58,622,432" >
+            <Image Source="img/valorant.png" Height="410" Width="308"/>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetName="val" Storyboard.TargetProperty="Margin" BeginTime="0:0:0">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="318,468,622,432" />
+                                <SplineThicknessKeyFrame KeyTime="00:00:0.5" Value="318,318,622,432"/>
+                            </ThicknessAnimationUsingKeyFrames>
+                            <DoubleAnimation Storyboard.TargetName="val"
+                                             Storyboard.TargetProperty="Opacity"
+                                             From="0"  To="100"
+                                             Duration="0:0:2">
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="val"
+                                             Storyboard.TargetProperty="Opacity"
+                                             From="100"  To="0"
+                                             Duration="0:0:0.2">
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <Button Click="Finding_Click" x:Name="LOL"  Height="410" Width="290" Margin="625,58,315,432" >
+            <Image Source="img/lol.jpg"/>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetName="lol" Storyboard.TargetProperty="Margin" BeginTime="0:0:0">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="625,468,315,432" />
+                                <SplineThicknessKeyFrame KeyTime="00:00:0.5" Value="625,318,315,432" />
+                            </ThicknessAnimationUsingKeyFrames>
+                            <DoubleAnimation Storyboard.TargetName="lol"
+                                             Storyboard.TargetProperty="Opacity"
+                                             From="0"  To="100"
+                                             Duration="0:0:2">
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="lol"
+                                             Storyboard.TargetProperty="Opacity"
+                                             From="100"  To="0"
+                                             Duration="0:0:0.2">
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <Button Click="Finding_Click" x:Name="Dota2" Height="410" Width="290" Margin="930,58,10,432">
+            <Image Source="img/dota2.png" Height="180"/>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetName="dota" Storyboard.TargetProperty="Margin" BeginTime="0:0:0">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="930,468,10,432" />
+                                <SplineThicknessKeyFrame KeyTime="00:00:0.5" Value="930,318,10,432"/>
+                            </ThicknessAnimationUsingKeyFrames>
+                            <DoubleAnimation Storyboard.TargetName="dota"
+                                             Storyboard.TargetProperty="Opacity"
+                                             From="0"  To="100"
+                                             Duration="0:0:2">
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="dota"
+                                             Storyboard.TargetProperty="Opacity"
+                                             From="100"  To="0"
+                                             Duration="0:0:0.2">
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <Button Click="Finding_Click" x:Name="Pubg" Height="410" Width="290" Margin="10,480,930,10" >
+            <Image Source="img/pubg.png"/>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetName="pubg" Storyboard.TargetProperty="Margin" BeginTime="0:0:0">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="10,890,930,10" />
+                                <SplineThicknessKeyFrame KeyTime="00:00:0.5" Value="10,740,930,10"/>
+                            </ThicknessAnimationUsingKeyFrames>
+                            <DoubleAnimation Storyboard.TargetName="pubg"
+                                             Storyboard.TargetProperty="Opacity"
+                                             From="0"  To="100"
+                                             Duration="0:0:2">
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="pubg"
+                                             Storyboard.TargetProperty="Opacity"
+                                             From="100"  To="0"
+                                             Duration="0:0:0.2">
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <Button Click="Finding_Click" x:Name="Apex" Height="410" Width="290" Margin="318,480,622,10" >
+            <Image Source="img/apex.png"/>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetName="apex" Storyboard.TargetProperty="Margin" BeginTime="0:0:0">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="318,890,622,10" />
+                                <SplineThicknessKeyFrame KeyTime="00:00:0.5" Value="318,740,622,10"/>
+                            </ThicknessAnimationUsingKeyFrames>
+                            <DoubleAnimation Storyboard.TargetName="apex"
+                                             Storyboard.TargetProperty="Opacity"
+                                             From="0"  To="100"
+                                             Duration="0:0:2">
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="apex"
+                                             Storyboard.TargetProperty="Opacity"
+                                             From="100"  To="0"
+                                             Duration="0:0:0.2">
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <Button Click="Finding_Click" x:Name="TFT" Height="410" Width="290" Margin="625,480,315,10" />
+        <Button Click="Finding_Click" x:Name="Amongus" Height="410" Width="290" Margin="930,480,10,10" />
+        <TextBlock x:Name="val" Text="Valorant"
+                   FontSize="30"
+                   FontWeight="Bold"
+                   Height="150"
+                   Width="290"
+                   Foreground="Aqua" 
+                   Visibility="Visible"
+                   Opacity="0" Margin="318,318,622,432" >
+            <TextBlock.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.7">
+                    <GradientStop Color="DarkGray"/>
+                    <GradientStop Color="Black" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Background>
+        </TextBlock>
+        <TextBlock x:Name="lol" Text="LoL"
+                   FontSize="30"
+                   FontWeight="Bold"
+                   Height="150"
+                   Width="290"
+                   Foreground="Aqua" 
+                   Visibility="Visible"
+                   Opacity="0" Margin="625,318,315,432"  >
+            <TextBlock.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.7">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="DarkGray" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Background>
+        </TextBlock>
+        <TextBlock x:Name="dota" Text="Dota 2"
+                   FontSize="30"
+                   FontWeight="Bold"
+                   Height="150"
+                   Width="290"
+                   Foreground="Aqua" 
+                   Visibility="Visible"
+                   Opacity="0"  
+                   Margin="930,318,10,432">
+            <TextBlock.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.7">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="DarkGray" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Background>
+        </TextBlock>
+        <TextBlock x:Name="pubg" Text="Pubg"
+                   FontSize="30"
+                   FontWeight="Bold"
+                   Height="150"
+                   Width="290"
+                   Foreground="Aqua" 
+                   Visibility="Visible"
+                   Opacity="0" Margin="10,740,930,10" >
+            <TextBlock.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.7">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="DarkGray" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Background>
+        </TextBlock>
+        <TextBlock x:Name="apex" Text="Apex Legend"
+                   FontSize="30"
+                   FontWeight="Bold"
+                   Height="150"
+                   Width="290"
+                   Foreground="Aqua" 
+                   Visibility="Visible"
+                   Opacity="0" Margin="318,740,622,10" >
+            <TextBlock.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.7">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="DarkGray" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Background>
+        </TextBlock>
+    </Grid>
+</Page>

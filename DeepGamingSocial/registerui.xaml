@@ -1,0 +1,97 @@
+﻿<Page x:Class="DeepGamingSocial.registerui"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DeepGamingSocial"
+      mc:Ignorable="d" 
+      Height="900" Width="1600"
+      Title="registerui"
+      Background="LightGray">
+    <Page.Resources>
+        <Style TargetType="{x:Type TextBox}">
+            <Style.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10" />
+                </Style>
+            </Style.Resources>
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <TextBlock Text="Register Account"
+            FontSize="40"
+            FontWeight="Bold"
+            Width="400"
+            Height="50" Margin="836,182,364,668"/>
+        <Line
+            X1="0" Y1="10"
+            X2="0" Y2="500"
+            Width="4"
+            Height="200"
+            Stroke="Black"
+            StrokeThickness="10" Margin="782,99,814,601" />
+        <Image Source="/img/logodonbe.png" Margin="281,68,807,500"  />
+        <TextBlock Text="Account name: "
+                   FontSize="25"
+                   FontWeight="Bold"
+                   Width="200"
+                   Height="40" Margin="307,423,1093,437"/>
+        <TextBlock Text="Password: "
+                   FontSize="25"
+                   FontWeight="Bold"
+                   Width="200"
+                   Height="40" Margin="307,499,1093,361"/>
+        
+        <TextBlock Text="Recovery question: "
+                   x:Name="RecQuesBox"
+                   FontSize="25"
+                   FontWeight="Bold"
+                   Width="250"
+                   Height="40" Margin="307,569,1043,291"/>
+        <TextBlock Text="Recovery Answer: "
+                   FontSize="25"
+                   FontWeight="Bold"
+                   Width="250"
+                   Height="40" Margin="307,643,1043,217"/>
+        <TextBox Height="40" x:Name="Accountbox"
+                 Width="300" Margin="584,423,716,437"/>
+        <PasswordBox Height="40" x:Name="Passwordbox"
+                 Width="300" Margin="584,499,716,361">
+            <PasswordBox.Template>
+                <ControlTemplate TargetType="{x:Type PasswordBox}">
+                    <Border Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="10">
+                        <ScrollViewer x:Name="PART_ContentHost" />
+                    </Border>
+                </ControlTemplate>
+            </PasswordBox.Template>
+        </PasswordBox>
+        <TextBox Height="40" x:Name="Recoveryquesbox"
+                 Width="300" Margin="584,569,716,291"/>
+        <TextBox Height="40" x:Name="Recoverypassbox"
+                 Width="300" Margin="584,643,716,217"/>
+        <CheckBox x:Name="confirm"
+                  Content="Confirm"
+                  FontSize="25"
+                  FontWeight="Bold"
+                  Height="40"
+                  Width="150" Margin="982,643,468,217" IsChecked="False"/>
+        <Button Height="50"
+                Width="200"
+                Content="Register"
+                FontSize="30"
+                FontWeight="Bold"
+                x:Name="Registerbtn"
+                Click="Registerbtn_Click"
+                Margin="1220,752,180,98"/>
+        <Button Height="50"
+                Width="200"
+                Content="Main Menu"
+                FontSize="30"
+                FontWeight="Bold"
+                x:Name="back"
+                Click="back_Click" Margin="207,752,1193,98"/>
+    </Grid>
+</Page>
